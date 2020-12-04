@@ -12,23 +12,21 @@ This is a Regression problem, and is used to predict the Concrete Compressive St
 * sklearn
 ## Exploratory Data Analysis
 
-### ![ Vs. ](/Images/pic1.png)        ![ Vs.](/Images/pic2.png)
-### ![](/Images/pic3.png)                              ![](/Images/pic4.png)
+### ![Concrete composition elements vs Concrete Strength](/Images/pic1.png)        
+
 
 ### Feature Importance
 
-The features that influence the prediction of class 1 for the Target Variable (The customer will accept Personal Loan) are:
-* 
-* Fa
-* F
+The features that influence the prediction of Concrete Strength are:
+* water/cement ratio
+* age_3
+* age_7
+* slag
+* superplastic
 
-The features that influence the prediction of class 0 for the Target variable (The customer will NOT accept Personal Loan) are:
-* Educ
-* Family_2
-* Online
+### Choosing the Best Regression Model
+![Model Comparison Chart](/Images/df.png)
 
-Mortgage, Age, Experience, Income and CreditCard DO NOT have much influence on the 'Loan Status'
- 
 ### Business Understanding and Inference:
  
-The ROC_AUC score is high, 0.905, Also the Recall score is high here 0.991 . So, we can say that this Logit Model is performing well in distinguishing positives from negative classes with less False Negatives.
+Random Forest Regressor is identified to be the best Model in this scenario (High Test Accuracy Score and low RMSE) . Cross Validation is applied on this model to obtain the average accuracy of the model in Production, and hyperparameter tuning is done to extract the extra performance from the Model. The final Tuned Random Forest Regressor has an Accuracy Score of 90.1% and RMSE of 5.16
